@@ -1,0 +1,45 @@
+﻿<!-- Вікно авторизації для додатку користувачів -->
+<Window x:Class="WpfApp2.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Users App" Height="600" Width="800" WindowStyle="ThreeDBorderWindow">
+
+    <!-- Головний контейнер з фоном -->
+    <Grid Background="#ffedb5">
+        <!-- Обрамлення для елементів форми з тінню для кращого візуального відділення -->
+        <Border MinWidth="400" MaxWidth="550" Margin="15" Background="#fff"
+                VerticalAlignment="Center" Padding="30" CornerRadius="20">
+            <Border.Effect>
+                <!-- Ефект тіні для обрамлення -->
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <!-- Вертикальне вирівнювання елементів форми -->
+            <StackPanel>
+                <!-- Заголовок вікна -->
+                <TextBlock Text="Авторизація" FontSize="30" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                <!-- Кнопки для навігації між реєстрацією та входом -->
+                <Grid Margin="0,0,0,20">
+                    <!-- Кнопка для переходу до реєстрації -->
+                    <Button HorizontalAlignment="Left" Click="ToReg_Button_Click" Content="Регістрація"/>
+                    <!-- Кнопка для входу (не використовується обробник подій) -->
+                    <Button HorizontalAlignment="Right" Content="Вхід" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+
+                <!-- Поле для введення логіну -->
+                <TextBox MaxLength="16" x:Name="loginTextBox" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <!-- Поле для введення паролю -->
+                <PasswordBox x:Name="passwordTextBox" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <!-- Кнопка для спроби авторизації -->
+                <Button Content="Увійти" Margin="0 20" Click="Auth_Button_Click"/>
+            </StackPanel>
+        </Border>
+        <!-- Контейнер для подальшої навігації або відображення додаткового контенту -->
+        <Frame Name="AuthFrame"/>
+    </Grid>
+</Window>

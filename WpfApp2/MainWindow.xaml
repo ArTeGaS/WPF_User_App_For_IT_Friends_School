@@ -1,0 +1,48 @@
+﻿<!-- Головне вікно програми -->
+<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Users App" Height="600" Width="800" WindowStyle="ThreeDBorderWindow">
+    <!-- Встановлюємо колір фону головного вікна -->
+    <Grid Background="#ffedb5">
+        <!-- Border додає обрамлення з закругленими краями для вмісту, що знаходиться всередині -->
+        <Border MinWidth="400" MaxWidth="550" Margin="15" Background="#fff"
+                VerticalAlignment="Center" Padding="30" CornerRadius="20">
+            <!-- Додаємо ефект тіні до обрамлення для візуальної глибини -->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <!-- StackPanel використовується для вертикального розміщення вмісту -->
+            <StackPanel>
+                <!-- Заголовок вікна реєстрації -->
+                <TextBlock Text="Вітаємо вас!" FontSize="30" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                <!-- Сітка з кнопками "Регістрація" та "Вхід" -->
+                <Grid Margin="0,0,0,20">
+                    <!-- Кнопка "Регістрація" без прив'язаного обробника подій -->
+                    <Button HorizontalAlignment="Left" Content="Регістрація"/>
+                    <!-- Кнопка "Вхід" з прив'язаним обробником подій для переходу до вікна авторизації -->
+                    <Button HorizontalAlignment="Right" Content="Вхід" Click="ToAuth_Button_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+
+                <!-- Введення логіну користувача -->
+                <TextBox MaxLength="16" x:Name="loginTextBox" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <!-- Поле для введення пароля -->
+                <PasswordBox x:Name="passwordTextBox" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <!-- Поле для повторення пароля -->
+                <PasswordBox x:Name="passwordConTextBox" materialDesign:HintAssist.Hint="Повторіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <!-- Введення електронної пошти -->
+                <TextBox x:Name="emailTextBox" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <!-- Кнопка для реєстрації з прив'язаним обробником подій -->
+                <Button Content="Зареєструватися" Margin="0 20" Click="Reg_Button_Click"/>
+            </StackPanel>
+        </Border>
+        <!-- Контейнер Frame використовується для навігації між різними сторінками в додатку -->
+        <Frame Name="MainFrame"/>
+    </Grid>
+</Window>

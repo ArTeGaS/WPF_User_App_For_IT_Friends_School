@@ -1,0 +1,73 @@
+﻿<!-- Вікно користувацького профілю в додатку -->
+<Window x:Class="WpfApp2.UserPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Users App" Height="600" Width="800" WindowStyle="ThreeDBorderWindow">
+    <!-- Фонове зображення для головного гріда -->
+    <Grid Background="#ffedb5">
+        <!-- Внутрішній грід для розташування елементів -->
+        <Grid>
+            <!-- Визначення колонок гріда -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Центральний грід для вмісту -->
+            <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Визначення колонок для центрального гріда -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- Ліва частина з кнопками навігації -->
+                <Border Width="200" Margin="15" Background="White"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Padding="10" CornerRadius="20" Grid.Column="0"
+                        Height="{Binding ActualHeight, ElementName=TargetBorder, Mode=OneWay}">
+                    <Border.Effect>
+                        <!-- Ефект тіні для Border -->
+                        <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                    </Border.Effect>
+                    <!-- Стек панель для розміщення елементів у вертикальному порядку -->
+                    <StackPanel>
+                        <!-- Список кнопок для навігації -->
+                        <ListView x:Name="listOfButtons" FontSize="15" HorizontalAlignment="Left"
+                                  Margin="20, 0" FontWeight="DemiBold" SelectionMode="Single"
+                                  SelectionChanged="listOfButtons_SelectionChanged"/>
+                    </StackPanel>
+                </Border>
+                <!-- Права частина для відображення інформації користувача -->
+                <Border MinWidth="400" MaxWidth="550" Margin="15" Background="#fff"
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Padding="30" CornerRadius="20" Grid.Column="1" x:Name="TargetBorder">
+                    <Border.Effect>
+                        <!-- Ефект тіні для Border -->
+                        <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <!-- Заголовок кабінету користувача -->
+                        <TextBlock Text="Кабінет користувача" FontSize="30" Margin="0,0,0,0" 
+                                   TextAlignment="Center" FontWeight="Bold"/>
+                        <!-- Border для зображення користувача з круглим вирізом -->
+                        <Border CornerRadius="100" Width="200" Height="200" BorderBrush="Black" 
+                                BorderThickness="2" HorizontalAlignment="Center" Margin="0, 10">
+                            <!-- Зображення користувача -->
+                            <Image x:Name="userPhoto" Loaded="userPhoto_Loaded" 
+                                   Source="/Pics/photo_2023-01-18_20-26-30.jpg" Stretch="UniformToFill"/>
+                        </Border>
+                        <!-- Список даних користувача -->
+                        <ListView x:Name="listOfUserData" Margin="10" IsHitTestVisible="False"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+        <!-- Фрейм для навігації між різними сторінками користувацького інтерфейсу -->
+        <Frame Name="UserPageFrame"/>
+    </Grid>
+</Window>
