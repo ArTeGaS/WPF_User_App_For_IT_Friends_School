@@ -31,3 +31,5 @@ C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\UserPageWindow.g.cs
 C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\UserPageWindow.baml
 C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\ProfileEditingPage.g.cs
 C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\ProfileEditingPage.baml
+C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\ProfilePage.g.cs
+C:\Users\user\source\repos\WpfApp2\WpfApp2\obj\Debug\ProfilePage.baml

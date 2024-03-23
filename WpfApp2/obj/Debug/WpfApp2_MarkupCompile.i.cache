@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\source\repos\WpfApp2\WpfApp2\App.xaml
-41907933289
+5-805060739
 
-111089783963
+121098846375
 171281779884
-AuthWindow.xaml;MainWindow.xaml;ProfileEditingPage.xaml;UserPageWindow.xaml;
+AuthWindow.xaml;MainWindow.xaml;ProfileEditingPage.xaml;ProfilePage.xaml;UserPageWindow.xaml;
 
-False
+True
 

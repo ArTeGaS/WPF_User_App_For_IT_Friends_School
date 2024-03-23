@@ -14,7 +14,7 @@ namespace WpfApp2
     public class User
     {
         // Приватні поля для зберігання інформації про користувача.
-        private string login, password, email, firstName, lastName;
+        private string login, password, email, firstName, lastName, photoPath;
 
         // Властивості для доступу до даних користувача.
         public string Login
@@ -41,6 +41,11 @@ namespace WpfApp2
         {
             get { return email; }
             set { email = value; }
+        }
+        public string PhotoPath
+        {
+            get { return photoPath; }
+            set { photoPath = value; }
         }
 
         // Конструктор за замовчуванням.
